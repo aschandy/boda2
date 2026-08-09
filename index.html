@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es-UY">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ali y Narcy &mdash; 05.12.26</title>
+    <meta name="description" content="Nos casamos. Te esperamos en Montevideo.">
+
+    <meta property="og:title" content="Ali y Narcy &mdash; 05.12.26">
+    <meta property="og:description" content="Nos casamos. Te esperamos en Montevideo.">
+    <!-- Para WhatsApp/Open Graph, reemplazar por una URL publica absoluta cuando el sitio este publicado. -->
+    <meta property="og:image" content="[URL ABSOLUTA DE LA IMAGEN DE PREVIEW]">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Imperial+Script&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#lugar">Saltar al contenido</a>
+
+    <section class="music-intro" id="entryScreen" aria-labelledby="entryTitle" aria-describedby="entryDate">
+        <div class="music-intro__content">
+            <p class="music-intro__title" id="entryTitle">ALI Y NARCY</p>
+            <p class="music-intro__date" id="entryDate">05 | 12 | 26</p>
+            <div class="music-intro__actions" aria-label="Opciones de entrada">
+                <button class="entry-link" id="enterWithMusic" type="button">ENTRAR CON M&Uacute;SICA &rarr;</button>
+                <button class="entry-link entry-link--secondary" id="enterWithoutMusic" type="button">ENTRAR SIN M&Uacute;SICA &rarr;</button>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="hero" aria-label="Portada de la invitaci&oacute;n">
+            <img class="hero__image" src="images/hero.jpg" alt="Agua calma y cielo de verano con dos siluetas a lo lejos." fetchpriority="high">
+            <div class="hero__tone" aria-hidden="true"></div>
+            <div class="hero__content reveal">
+                <p class="eyebrow hero__eyebrow">NOS CASAMOS</p>
+                <h1 class="script-title"><span data-config="couple.person1">Ali</span> y <span data-config="couple.person2">Narcy</span></h1>
+                <p class="date-mark">05 | 12 | 26</p>
+                <p class="place-mark" data-config="wedding.city">Montevideo, Uruguay</p>
+            </div>
+            <a class="scroll-cue" href="#lugar" aria-label="Ir al lugar"></a>
+        </section>
+
+        <section class="section countdown-section" aria-labelledby="countdown-title">
+            <div class="section__inner reveal">
+                <p class="eyebrow" id="countdown-title">FALTAN</p>
+                <div class="countdown" data-countdown aria-live="polite">
+                    <div>
+                        <span id="countdownDays">000</span>
+                        <small>D&Iacute;AS</small>
+                    </div>
+                    <div>
+                        <span id="countdownHours">00</span>
+                        <small>HORAS</small>
+                    </div>
+                    <div>
+                        <span id="countdownMinutes">00</span>
+                        <small>MIN</small>
+                    </div>
+                    <div>
+                        <span id="countdownSeconds">00</span>
+                        <small>SEG</small>
+                    </div>
+                </div>
+                <p class="countdown-message" id="countdownMessage">Para el 5 de diciembre de 2026</p>
+            </div>
+        </section>
+
+        <section class="section place-section" id="lugar" aria-labelledby="lugar-title">
+            <div class="section__inner place-layout reveal">
+                <div class="place-copy">
+                    <p class="eyebrow">D&Oacute;NDE</p>
+                    <h2 id="lugar-title" data-config="location.name">[NOMBRE DEL LUGAR]</h2>
+                    <p class="address" data-config="location.address">[DIRECCI&Oacute;N]</p>
+                    <dl class="place-details">
+                        <div>
+                            <dt>Hora inicio</dt>
+                            <dd data-config="wedding.startTime">[HORA]</dd>
+                        </div>
+                        <div>
+                            <dt>Hora finalizaci&oacute;n</dt>
+                            <dd data-config="wedding.endTime">[HORA]</dd>
+                        </div>
+                    </dl>
+                    <div class="place-actions" aria-label="Acciones del lugar y calendario">
+                        <a class="text-link place-actions__directions" id="mapsLink" href="[GOOGLE_MAPS_URL]" target="_blank" rel="noopener">C&Oacute;MO LLEGAR &rarr;</a>
+                        <div class="calendar-actions">
+                            <p>AGENDAR</p>
+                            <div class="calendar-actions__links">
+                                <a class="text-link" id="googleCalendarLink" href="#" target="_blank" rel="noopener">GOOGLE &rarr;</a>
+                                <span aria-hidden="true">o</span>
+                                <a class="text-link" id="icsDownloadLink" href="wedding.ics" download>CALENDAR &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <figure class="place-photo">
+                    <!-- Foto del lugar de la boda. Reemplazar images/lugar.jpg si cambia el lugar o la toma. -->
+                    <img src="images/lugar.jpg" alt="Fotograf&iacute;a del lugar de la boda." loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section class="section gallery-section" id="galeria" aria-labelledby="galeria-title">
+            <div class="section__inner gallery-heading reveal">
+                <p class="eyebrow">GALER&Iacute;A</p>
+                <h2 id="galeria-title">Ali y Narcy</h2>
+            </div>
+
+            <div class="gallery-flow">
+                <figure class="gallery-photo gallery-photo--hero reveal">
+                    <!-- gallery-01.jpg: fotografia horizontal protagonista de la galeria. -->
+                    <img class="gallery-image gallery-image--1" src="images/gallery-01.jpg" alt="Ali y Narcy en una sala de museo." loading="lazy">
+                </figure>
+
+                <div class="gallery-diptych gallery-diptych--first">
+                    <figure class="gallery-photo gallery-photo--diptych-a reveal">
+                        <!-- gallery-02.jpg: fotografia vertical cercana. -->
+                        <img class="gallery-image gallery-image--2" src="images/gallery-02.jpg" alt="Ali y Narcy reflejados en un espejo." loading="lazy">
+                    </figure>
+                    <figure class="gallery-photo gallery-photo--diptych-b reveal">
+                        <!-- gallery-03.jpg: fotografia vertical de viaje. -->
+                        <img class="gallery-image gallery-image--3" src="images/gallery-03.jpg" alt="Ali y Narcy frente a una caseta colorida." loading="lazy">
+                    </figure>
+                </div>
+
+                <p class="gallery-note gallery-note--first reveal" data-gallery-note>Entre distancias, ciudades y caminos, siempre elegimos encontrarnos.</p>
+
+                <figure class="gallery-photo gallery-photo--bleed reveal">
+                    <!-- gallery-04.jpg: fotografia horizontal a sangre. -->
+                    <img class="gallery-image gallery-image--4" src="images/gallery-04.jpg" alt="Ali y Narcy caminando de la mano." loading="lazy">
+                </figure>
+
+                <div class="gallery-diptych gallery-diptych--second">
+                    <figure class="gallery-photo gallery-photo--large reveal">
+                        <!-- gallery-05.jpg: fotografia vertical de paisaje. -->
+                        <img class="gallery-image gallery-image--5" src="images/gallery-05.jpg" alt="Ali y Narcy sentados frente a las monta&ntilde;as." loading="lazy">
+                    </figure>
+                    <figure class="gallery-photo gallery-photo--small reveal">
+                        <!-- gallery-06.jpg: fotografia vertical final de la galeria. -->
+                        <img class="gallery-image gallery-image--6" src="images/gallery-06.jpg" alt="Ali y Narcy frente al Tower Bridge." loading="lazy">
+                    </figure>
+                </div>
+
+                <p class="gallery-note gallery-note--final reveal" data-gallery-note>Hicimos hogar en muchos lugares, pero siempre fue donde estábamos juntos.</p>
+            </div>
+        </section>
+
+        <section class="section gifts-section" id="regalos" aria-labelledby="regalos-title">
+            <div class="section__inner narrow reveal">
+                <p class="eyebrow">REGALOS</p>
+                <h2 id="regalos-title">El mejor regalo es compartir este d&iacute;a con nosotros.</h2>
+                <p>Si adem&aacute;s quer&eacute;s hacernos un regalo, pod&eacute;s hacerlo aqu&iacute;.</p>
+
+                <dl class="gift-list" id="giftDetails">
+                    <div>
+                        <dt>Banco</dt>
+                        <dd data-config="gift.bank">[BANCO]</dd>
+                    </div>
+                    <div>
+                        <dt>Titular</dt>
+                        <dd data-config="gift.holder">[TITULAR]</dd>
+                    </div>
+                    <div>
+                        <dt>Cuenta</dt>
+                        <dd data-config="gift.account">[CUENTA]</dd>
+                    </div>
+                </dl>
+
+                <button class="text-button" id="copyGiftButton" type="button">COPIAR DATOS &rarr;</button>
+                <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section class="section rsvp-section" id="rsvp" aria-labelledby="rsvp-title">
+            <div class="section__inner narrow reveal">
+                <p class="eyebrow">RSVP</p>
+                <h2 class="script-heading" id="rsvp-title">&iquest;Nos acompa&ntilde;&aacute;s?</h2>
+                <p>Por favor, complet&aacute; una confirmaci&oacute;n por persona.</p>
+                <p class="important">Cada invitado debe completar su propia respuesta.</p>
+                <a class="confirm-link" id="rsvpLink" href="[GOOGLE_FORM_URL]" target="_blank" rel="noopener">CONFIRMAR ASISTENCIA &rarr;</a>
+
+                <!-- Si mas adelante quieren incrustar Google Forms, pueden reemplazar el enlace por un iframe con la URL publica del formulario. -->
+            </div>
+        </section>
+
+        <section class="finale" aria-label="Cierre">
+            <img class="finale__image" src="images/final.jpg" alt="Agua de verano y horizonte suave al atardecer." loading="lazy">
+            <div class="finale__tone" aria-hidden="true"></div>
+            <div class="finale__content reveal">
+                <p class="eyebrow">NOS VEMOS PRONTO</p>
+                <h2 class="script-title"><span data-config="couple.person1">Ali</span> y <span data-config="couple.person2">Narcy</span></h2>
+                <p class="date-mark">05 | 12 | 26</p>
+            </div>
+        </section>
+    </main>
+
+    <audio id="backgroundAudio" preload="none"></audio>
+    <button class="music-control" id="musicControl" type="button" aria-label="Activar m&uacute;sica" aria-pressed="false">
+        <span>M&Uacute;SICA</span>
+        <span id="musicControlState" aria-hidden="true">&#9654;</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
