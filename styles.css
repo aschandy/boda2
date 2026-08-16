@@ -139,7 +139,7 @@ a {
 }
 
 .music-intro__title.script-title {
-    font-size: clamp(3.7rem, 12vw, 3rem);
+    font-size: clamp(4.2rem, 13vw, 9rem);
 }
 
 .music-intro__date {
@@ -604,9 +604,9 @@ a {
 .gallery-flow {
     display: grid;
     width: min(100%, var(--max-width));
-    margin: clamp(3.75rem, 7vw, 6.25rem) auto 0;
+    margin: clamp(2rem, 5vw, 3.75rem) auto 0;
     padding-inline: var(--gutter);
-    row-gap: clamp(4.75rem, 10vw, 9rem);
+    row-gap: 0;
 }
 
 .gallery-photo {
@@ -655,6 +655,10 @@ a {
     width: min(92vw, 920px);
 }
 
+.gallery-photo--hero + .gallery-diptych--first {
+    margin-top: clamp(3rem, 13vw, 4.5rem);
+}
+
 .gallery-diptych {
     display: block;
 }
@@ -666,18 +670,54 @@ a {
 
 .gallery-diptych--first .gallery-photo--diptych-b {
     width: 78%;
-    margin-top: clamp(2rem, 8vw, 3.4rem);
+    margin-top: clamp(1.5rem, 6vw, 2rem);
     margin-left: auto;
 }
 
+.gallery-diptych--first + .gallery-note {
+    margin-top: clamp(3rem, 13vw, 4rem);
+}
+
 .gallery-note {
-    width: min(82vw, 620px);
+    width: min(84vw, 640px);
     margin: 0;
     color: var(--color-petroleum);
     font-family: var(--font-editorial);
-    font-size: clamp(1.8rem, 3vw, 3.5rem);
+    font-size: clamp(0.95rem, 1.3vw, 1.4rem);
     font-weight: 400;
-    line-height: 1.03;
+    line-height: 1.24;
+}
+
+.gallery-note__poem {
+    margin: 0;
+}
+
+.gallery-note__poem p {
+    margin: 0;
+}
+
+.gallery-note__poem p + p {
+    margin-top: 0.9rem;
+}
+
+.gallery-note__poem span {
+    display: block;
+}
+
+.gallery-note__author {
+    display: block;
+    margin-top: 0.85rem;
+    color: var(--color-muted);
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 1.1vw, 0.82rem);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.45;
+}
+
+.gallery-note__author cite {
+    font-style: italic;
 }
 
 .gallery-note[hidden] {
@@ -692,7 +732,12 @@ a {
 
 .gallery-photo--bleed {
     width: 100vw;
+    margin-top: clamp(3.2rem, 13vw, 4.4rem);
     margin-left: calc(50% - 50vw);
+}
+
+.gallery-photo--bleed + .gallery-diptych--second {
+    margin-top: clamp(3rem, 14vw, 4.5rem);
 }
 
 .gallery-diptych--second .gallery-photo--large {
@@ -701,7 +746,7 @@ a {
 
 .gallery-diptych--second .gallery-photo--small {
     width: 68%;
-    margin-top: clamp(2rem, 8vw, 3.4rem);
+    margin-top: clamp(1.5rem, 6vw, 2rem);
     margin-left: auto;
 }
 
@@ -835,7 +880,11 @@ a {
     }
 
     .gallery-flow {
-        row-gap: clamp(5.25rem, 9vw, 7.5rem);
+        row-gap: 0;
+    }
+
+    .gallery-photo--hero + .gallery-diptych--first {
+        margin-top: clamp(3.5rem, 7vw, 5rem);
     }
 
     .gallery-diptych {
@@ -857,11 +906,23 @@ a {
     }
 
     .gallery-diptych--first .gallery-photo--diptych-b {
-        margin-top: clamp(2.75rem, 7vw, 6.2rem);
+        margin-top: clamp(1.75rem, 4vw, 3.2rem);
+    }
+
+    .gallery-diptych--first + .gallery-note {
+        margin-top: clamp(2.8rem, 4vw, 3.8rem);
     }
 
     .gallery-image--4 {
         aspect-ratio: 16 / 7.8;
+    }
+
+    .gallery-photo--bleed {
+        margin-top: clamp(3.5rem, 6vw, 5rem);
+    }
+
+    .gallery-photo--bleed + .gallery-diptych--second {
+        margin-top: clamp(3.5rem, 7vw, 5rem);
     }
 
     .gallery-diptych--second {
@@ -870,7 +931,7 @@ a {
     }
 
     .gallery-diptych--second .gallery-photo--small {
-        margin-top: clamp(4rem, 9vw, 7.5rem);
+        margin-top: clamp(2.2rem, 5vw, 4rem);
     }
 }
 
@@ -882,7 +943,7 @@ a {
     .gallery-flow {
         grid-template-columns: repeat(12, minmax(0, 1fr));
         align-items: start;
-        row-gap: clamp(7.5rem, 10vw, 11rem);
+        row-gap: 0;
     }
 
     .gallery-flow > * {
@@ -908,7 +969,7 @@ a {
     }
 
     .gallery-note--first {
-        grid-column: 2 / 7;
+        grid-column: 2 / 10;
         width: auto;
     }
 
@@ -930,7 +991,7 @@ a {
     }
 
     .gallery-note--final {
-        grid-column: 6 / 13;
+        grid-column: 5 / 13;
         width: auto;
     }
 }
