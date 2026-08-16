@@ -41,7 +41,6 @@ const WEDDING_CONFIG = {
         endTime: "03:00",
         city: "Montevideo, Uruguay",
         timeZone: "America/Montevideo",
-        description: "[DESCRIPCI\u00d3N]"
     },
 
     location: {
@@ -51,7 +50,7 @@ const WEDDING_CONFIG = {
     },
 
     rsvp: {
-        googleFormUrl: "[GOOGLE_FORM_URL]"
+        googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSep2_9z_C9bc6xqaY1SIqyLPGYZIVq2LxEyD8YjiFmcOaPUsg/viewform?usp=publish-editor"
     },
 
     gift: {

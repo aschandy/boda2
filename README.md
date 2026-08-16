@@ -1,7 +1,5 @@
 # Invitacion digital de Ali y Narcy
 
-Sitio estatico para GitHub Pages hecho solo con HTML, CSS y JavaScript vanilla. No usa React, npm, backend ni base de datos.
-
 ## Estructura
 
 ```text
@@ -185,24 +183,25 @@ Despues entrar a `http://localhost:8000`, elegir `ENTRAR CON MUSICA` y probar el
 Crear un formulario nuevo en Google Forms con estas preguntas:
 
 1. Nombre y apellido
+
    - Tipo: respuesta corta
    - Obligatoria: si
-
 2. Vas a acompanarnos?
+
    - Tipo: opcion multiple
    - Opciones: Si, No
    - Obligatoria: si
-
 3. Requeris un menu especial?
+
    - Tipo: opcion multiple
    - Opciones: No, Vegetariano, Vegano, Sin gluten, Otra restriccion o alergia
    - Obligatoria: no, salvo que quieran forzar respuesta
-
 4. Si elegiste "Otra restriccion o alergia", contanos cual.
+
    - Tipo: parrafo
    - Obligatoria: no
-
 5. Que cancion no puede faltar en la fiesta?
+
    - Tipo: respuesta corta
    - Obligatoria: no
 
@@ -273,7 +272,7 @@ El archivo `wedding.ics` existe como respaldo para Apple Calendar, Outlook y otr
 En `index.html` estan estos metadatos:
 
 ```html
-<meta property="og:title" content="Ali y Narcy &mdash; 05.12.26">
+<meta property="og:title" content="Ali y Narcy — 05.12.26">
 <meta property="og:description" content="Nos casamos. Te esperamos en Montevideo.">
 <meta property="og:image" content="[URL ABSOLUTA DE LA IMAGEN DE PREVIEW]">
 ```
