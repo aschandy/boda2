@@ -138,13 +138,8 @@ a {
     transition: transform 650ms ease, opacity 650ms ease;
 }
 
-.music-intro__title {
-    margin: 0;
-    font-family: var(--font-editorial);
-    font-size: clamp(2.9rem, 12vw, 8.5rem);
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    line-height: 0.95;
+.music-intro__title.script-title {
+    font-size: clamp(3.7rem, 12vw, 3rem);
 }
 
 .music-intro__date {

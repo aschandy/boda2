@@ -1,5 +1,33 @@
 document.documentElement.classList.add("js");
 
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+
+function forceInstantScrollTop() {
+    const root = document.documentElement;
+    const body = document.body;
+    const rootScrollBehavior = root.style.scrollBehavior;
+    const bodyScrollBehavior = body ? body.style.scrollBehavior : "";
+
+    root.style.scrollBehavior = "auto";
+
+    if (body) {
+        body.style.scrollBehavior = "auto";
+    }
+
+    window.scrollTo(0, 0);
+    root.style.scrollBehavior = rootScrollBehavior;
+
+    if (body) {
+        body.style.scrollBehavior = bodyScrollBehavior;
+    }
+}
+
+forceInstantScrollTop();
+window.addEventListener("pageshow", forceInstantScrollTop);
+window.addEventListener("load", forceInstantScrollTop, { once: true });
+
 const WEDDING_CONFIG = {
     couple: {
         person1: "Ali",
@@ -404,6 +432,7 @@ function setupAudioExperience() {
         window.setTimeout(() => {
             entryScreen.classList.add("is-hidden");
             entryScreen.setAttribute("hidden", "");
+            forceInstantScrollTop();
             document.body.classList.remove("intro-active");
             showControl();
         }, cleanupDelay);
