@@ -690,6 +690,7 @@ a {
 
 .gallery-note__poem {
     margin: 0;
+    font-style: italic;
 }
 
 .gallery-note__poem p {
