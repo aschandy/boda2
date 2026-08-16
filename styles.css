@@ -732,6 +732,11 @@ a {
     object-position: center 47%;
 }
 
+.gallery-image--7 {
+    aspect-ratio: 4 / 3;
+    object-position: center 52%;
+}
+
 .gallery-photo--hero {
     width: min(92vw, 920px);
 }
@@ -830,6 +835,12 @@ a {
     width: 68%;
     margin-top: clamp(1.5rem, 6vw, 2rem);
     margin-left: auto;
+}
+
+.gallery-photo--closing {
+    width: 84%;
+    margin-top: clamp(2.8rem, 11vw, 4rem);
+    margin-left: 6%;
 }
 
 .gifts-section {
@@ -1007,6 +1018,11 @@ a {
         margin-top: clamp(3.5rem, 7vw, 5rem);
     }
 
+    .gallery-photo--closing {
+        width: 74%;
+        margin-left: 12%;
+    }
+
     .gallery-diptych--second {
         grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.72fr);
         align-items: center;
@@ -1070,6 +1086,12 @@ a {
 
     .gallery-diptych--second .gallery-photo--small {
         grid-column: 8 / 12;
+    }
+
+    .gallery-photo--closing {
+        grid-column: 3 / 12;
+        width: auto;
+        margin-left: 0;
     }
 
     .gallery-note--final {
