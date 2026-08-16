@@ -190,14 +190,16 @@ function updateCountdown() {
     const countdown = document.querySelector("[data-countdown]");
     const message = document.getElementById("countdownMessage");
 
-    if (!countdown || !message) {
+    if (!countdown) {
         return;
     }
 
     if (distance <= 0) {
         countdown.classList.add("is-today");
         countdown.innerHTML = "<p>HOY ES EL D&Iacute;A</p>";
-        message.textContent = "Montevideo nos espera.";
+        if (message) {
+            message.textContent = "Montevideo nos espera.";
+        }
         return;
     }
 

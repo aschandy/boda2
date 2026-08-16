@@ -714,6 +714,10 @@ a {
     background: #dfe8e3;
 }
 
+.gifts-section .eyebrow {
+    margin-bottom: 1.0rem;
+}
+
 .gifts-section p {
     margin: 1.2rem 0 0;
     color: var(--color-muted);
@@ -760,6 +764,10 @@ a {
 
 .rsvp-section .script-heading {
     color: var(--color-cream);
+}
+
+.rsvp-section .eyebrow {
+    margin-bottom: 1.0rem;
 }
 
 .rsvp-section p {
