@@ -98,8 +98,16 @@
                     </div>
                 </div>
                 <figure class="place-photo">
-                    <!-- Foto del lugar de la boda. Reemplazar images/lugar.jpg si cambia el lugar o la toma. -->
-                    <img src="images/lugar.jpg" alt="Fotograf&iacute;a del lugar de la boda." loading="lazy">
+                    <div class="place-carousel" data-place-carousel>
+                        <img class="place-carousel__image place-carousel__image--1 is-active" src="images/location-01.jpeg" alt="Fotograf&iacute;a del lugar de la boda." loading="lazy">
+                        <img class="place-carousel__image place-carousel__image--2" src="images/location-02.jpeg" alt="Fotograf&iacute;a del lugar de la boda." loading="lazy" aria-hidden="true">
+                        <img class="place-carousel__image place-carousel__image--3" src="images/location-03.jpeg" alt="Fotograf&iacute;a del lugar de la boda." loading="lazy" aria-hidden="true">
+                        <img class="place-carousel__image place-carousel__image--4" src="images/location-04.jpeg" alt="Fotograf&iacute;a del lugar de la boda." loading="lazy" aria-hidden="true">
+                        <img class="place-carousel__image place-carousel__image--5" src="images/location-05.jpeg" alt="Fotograf&iacute;a del lugar de la boda." loading="lazy" aria-hidden="true">
+                        <button class="place-carousel__button place-carousel__button--prev" type="button" aria-label="Foto anterior">&larr;</button>
+                        <button class="place-carousel__button place-carousel__button--next" type="button" aria-label="Foto siguiente">&rarr;</button>
+                        <p class="place-carousel__counter" aria-live="polite"><span data-place-current>01</span> / <span data-place-total>05</span></p>
+                    </div>
                 </figure>
             </div>
         </section>

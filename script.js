@@ -614,6 +614,73 @@ function setupGalleryNotes() {
     });
 }
 
+function setupPlaceCarousel() {
+    const carousel = document.querySelector("[data-place-carousel]");
+
+    if (!carousel) {
+        return;
+    }
+
+    const images = Array.from(carousel.querySelectorAll(".place-carousel__image"));
+    const previousButton = carousel.querySelector(".place-carousel__button--prev");
+    const nextButton = carousel.querySelector(".place-carousel__button--next");
+    const current = carousel.querySelector("[data-place-current]");
+    const total = carousel.querySelector("[data-place-total]");
+
+    if (images.length < 2 || !previousButton || !nextButton || !current || !total) {
+        return;
+    }
+
+    let activeIndex = images.findIndex((image) => image.classList.contains("is-active"));
+    let touchStartX = null;
+
+    if (activeIndex < 0) {
+        activeIndex = 0;
+    }
+
+    const formatNumber = (value) => String(value).padStart(2, "0");
+
+    const updateCarousel = () => {
+        images.forEach((image, index) => {
+            const isActive = index === activeIndex;
+            image.classList.toggle("is-active", isActive);
+            image.setAttribute("aria-hidden", String(!isActive));
+        });
+
+        current.textContent = formatNumber(activeIndex + 1);
+        total.textContent = formatNumber(images.length);
+    };
+
+    const showSlide = (nextIndex) => {
+        activeIndex = (nextIndex + images.length) % images.length;
+        updateCarousel();
+    };
+
+    previousButton.addEventListener("click", () => showSlide(activeIndex - 1));
+    nextButton.addEventListener("click", () => showSlide(activeIndex + 1));
+
+    carousel.addEventListener("touchstart", (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+
+    carousel.addEventListener("touchend", (event) => {
+        if (touchStartX === null) {
+            return;
+        }
+
+        const distance = event.changedTouches[0].clientX - touchStartX;
+        touchStartX = null;
+
+        if (Math.abs(distance) < 42) {
+            return;
+        }
+
+        showSlide(activeIndex + (distance < 0 ? 1 : -1));
+    }, { passive: true });
+
+    updateCarousel();
+}
+
 function setupReveal() {
     const elements = document.querySelectorAll(".reveal");
 
@@ -657,6 +724,7 @@ setupGiftCopy();
 setupAudioExperience();
 setupSmoothScroll();
 setupGalleryNotes();
+setupPlaceCarousel();
 setupReveal();
 updateCountdown();
 window.setInterval(updateCountdown, 1000);
