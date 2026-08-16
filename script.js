@@ -323,7 +323,6 @@ function giftText() {
         `Banco: ${gift.bank || "[BANCO]"}`,
         `Titular: ${gift.holder || "[TITULAR]"}`,
         `Cuenta: ${gift.account || "[CUENTA]"}`,
-        `Alias: ${gift.alias || "[ALIAS]"}`
     ].join("\n");
 }
 
@@ -364,7 +363,6 @@ function setupGiftCopy() {
     button.addEventListener("click", async () => {
         try {
             await copyText(giftText());
-            status.textContent = "COPIADO \u2713";
             button.textContent = "COPIADO \u2713";
         } catch (error) {
             status.textContent = "No se pudo copiar automaticamente.";

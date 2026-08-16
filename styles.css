@@ -322,38 +322,41 @@ a {
 
 .music-control {
     position: fixed;
-    right: calc(1.25rem + env(safe-area-inset-right));
-    bottom: calc(1.25rem + env(safe-area-inset-bottom));
+    right: calc(0.95rem + env(safe-area-inset-right));
+    bottom: calc(0.95rem + env(safe-area-inset-bottom));
     z-index: 24;
     display: inline-flex;
-    gap: 0.65rem;
+    gap: 0.5rem;
     align-items: center;
-    min-height: 42px;
+    min-height: 38px;
     border: 1px solid rgba(239, 232, 183, 0.38);
-    background: rgba(32, 63, 65, 0.76);
+    background: rgba(32, 63, 65, 0.64);
     color: var(--color-cream);
     cursor: pointer;
-    font: 500 0.68rem/1 var(--font-body);
-    letter-spacing: 0.18em;
+    font: 500 0.62rem/1 var(--font-body);
+    letter-spacing: 0.15em;
     opacity: 0;
-    padding: 0.65rem 0.78rem;
+    padding: 0.54rem 0.66rem;
     pointer-events: none;
     text-transform: uppercase;
     transform: translateY(8px);
-    transition: opacity 420ms ease, transform 420ms ease, border-color 180ms ease, color 180ms ease;
+    transition: opacity 420ms ease, transform 420ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
     visibility: hidden;
 }
 
 .music-control.is-visible {
     visibility: visible;
-    opacity: 1;
+    opacity: 0.84;
     pointer-events: auto;
     transform: translateY(0);
 }
 
-.music-control:hover {
+.music-control:hover,
+.music-control:focus-visible {
+    background: rgba(32, 63, 65, 0.82);
     border-color: rgba(239, 232, 183, 0.72);
     color: #fff7c8;
+    opacity: 1;
 }
 
 .section {
@@ -683,6 +686,8 @@ a {
 }
 
 .gallery-flow {
+    --gallery-photo-gap: clamp(1.2rem, 5vw, 2rem);
+    --gallery-poem-gap: calc(var(--gallery-photo-gap) + 0.5rem);
     display: grid;
     width: min(100%, var(--max-width));
     margin: clamp(2rem, 5vw, 3.75rem) auto 0;
@@ -703,46 +708,47 @@ a {
 }
 
 .gallery-image--1 {
-    aspect-ratio: 3 / 2;
-    object-position: center 48%;
-}
-
-.gallery-image--2 {
-    aspect-ratio: 4 / 5.45;
-    object-position: center 44%;
-}
-
-.gallery-image--3 {
-    aspect-ratio: 4 / 5.35;
-    object-position: center 48%;
-}
-
-.gallery-image--4 {
-    aspect-ratio: 16 / 8.6;
+    aspect-ratio: 1 / 1;
     object-position: center 46%;
 }
 
+.gallery-image--2 {
+    aspect-ratio: 1 / 1;
+    object-position: center 42%;
+}
+
+.gallery-image--3 {
+    aspect-ratio: 1 / 1;
+    object-position: center 30%;
+}
+
+.gallery-image--4 {
+    aspect-ratio: 1 / 1;
+    object-position: center 20%;
+}
+
 .gallery-image--5 {
-    aspect-ratio: 4 / 5.15;
-    object-position: center 48%;
+    aspect-ratio: 1 / 1;
+    object-position: center 10%;
 }
 
 .gallery-image--6 {
-    aspect-ratio: 4 / 5.35;
-    object-position: center 47%;
+    aspect-ratio: 1 / 1;
+    object-position: center 30%;
 }
 
 .gallery-image--7 {
-    aspect-ratio: 4 / 3;
-    object-position: center 52%;
+    aspect-ratio: 1 / 1;
+    object-position: center 20%;
 }
 
 .gallery-photo--hero {
-    width: min(92vw, 920px);
+    width: 92%;
+    margin-inline: auto;
 }
 
 .gallery-photo--hero + .gallery-diptych--first {
-    margin-top: clamp(3rem, 13vw, 4.5rem);
+    margin-top: var(--gallery-photo-gap);
 }
 
 .gallery-diptych {
@@ -750,18 +756,18 @@ a {
 }
 
 .gallery-diptych--first .gallery-photo--diptych-a {
-    width: 72%;
-    margin-left: 8%;
+    width: 63%;
+    margin-left: 0;
 }
 
 .gallery-diptych--first .gallery-photo--diptych-b {
-    width: 78%;
-    margin-top: clamp(1.5rem, 6vw, 2rem);
+    width: 83%;
+    margin-top: var(--gallery-photo-gap);
     margin-left: auto;
 }
 
 .gallery-diptych--first + .gallery-note {
-    margin-top: clamp(3rem, 13vw, 4rem);
+    margin-top: var(--gallery-poem-gap);
 }
 
 .gallery-note {
@@ -818,29 +824,30 @@ a {
 }
 
 .gallery-photo--bleed {
-    width: 100vw;
-    margin-top: clamp(3.2rem, 13vw, 4.4rem);
-    margin-left: calc(50% - 50vw);
+    width: 78%;
+    margin-top: var(--gallery-poem-gap);
+    margin-left: auto;
 }
 
 .gallery-photo--bleed + .gallery-diptych--second {
-    margin-top: clamp(3rem, 14vw, 4.5rem);
+    margin-top: var(--gallery-photo-gap);
 }
 
 .gallery-diptych--second .gallery-photo--large {
-    width: 80%;
+    width: 68%;
+    margin-left: 0;
 }
 
 .gallery-diptych--second .gallery-photo--small {
-    width: 68%;
-    margin-top: clamp(1.5rem, 6vw, 2rem);
+    width: 63%;
+    margin-top: var(--gallery-photo-gap);
     margin-left: auto;
 }
 
 .gallery-photo--closing {
-    width: 84%;
-    margin-top: clamp(2.8rem, 11vw, 4rem);
-    margin-left: 6%;
+    width: 88%;
+    margin-top: var(--gallery-photo-gap);
+    margin-inline: auto;
 }
 
 .gifts-section {
@@ -973,63 +980,59 @@ a {
     }
 
     .gallery-flow {
+        --gallery-photo-gap: clamp(2.2rem, 4.5vw, 3.4rem);
         row-gap: 0;
     }
 
     .gallery-photo--hero + .gallery-diptych--first {
-        margin-top: clamp(3.5rem, 7vw, 5rem);
+        margin-top: var(--gallery-photo-gap);
     }
 
     .gallery-diptych {
-        display: grid;
+        display: block;
         align-items: start;
-        column-gap: clamp(1.5rem, 4.5vw, 3.75rem);
     }
 
-    .gallery-diptych--first {
-        grid-template-columns: minmax(0, 0.86fr) minmax(0, 1fr);
-    }
-
-    .gallery-diptych--first .gallery-photo--diptych-a,
-    .gallery-diptych--first .gallery-photo--diptych-b,
-    .gallery-diptych--second .gallery-photo--large,
-    .gallery-diptych--second .gallery-photo--small {
-        width: auto;
+    .gallery-diptych--first .gallery-photo--diptych-a {
+        width: 63%;
         margin-left: 0;
     }
 
     .gallery-diptych--first .gallery-photo--diptych-b {
-        margin-top: clamp(1.75rem, 4vw, 3.2rem);
+        width: 83%;
+        margin-top: var(--gallery-photo-gap);
+        margin-left: auto;
     }
 
-    .gallery-diptych--first + .gallery-note {
-        margin-top: clamp(2.8rem, 4vw, 3.8rem);
-    }
-
-    .gallery-image--4 {
-        aspect-ratio: 16 / 7.8;
-    }
-
-    .gallery-photo--bleed {
-        margin-top: clamp(3.5rem, 6vw, 5rem);
-    }
-
-    .gallery-photo--bleed + .gallery-diptych--second {
-        margin-top: clamp(3.5rem, 7vw, 5rem);
-    }
-
-    .gallery-photo--closing {
-        width: 74%;
-        margin-left: 12%;
-    }
-
-    .gallery-diptych--second {
-        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.72fr);
-        align-items: center;
+    .gallery-diptych--second .gallery-photo--large {
+        width: 68%;
+        margin-left: 0;
     }
 
     .gallery-diptych--second .gallery-photo--small {
-        margin-top: clamp(2.2rem, 5vw, 4rem);
+        width: 63%;
+        margin-top: var(--gallery-photo-gap);
+        margin-left: auto;
+    }
+
+    .gallery-diptych--first + .gallery-note {
+        margin-top: var(--gallery-poem-gap);
+    }
+
+    .gallery-photo--bleed {
+        width: 78%;
+        margin-top: var(--gallery-poem-gap);
+        margin-left: auto;
+    }
+
+    .gallery-photo--bleed + .gallery-diptych--second {
+        margin-top: var(--gallery-photo-gap);
+    }
+
+    .gallery-photo--closing {
+        width: 88%;
+        margin-top: var(--gallery-photo-gap);
+        margin-inline: auto;
     }
 }
 
@@ -1049,21 +1052,19 @@ a {
     }
 
     .gallery-photo--hero {
-        grid-column: 1 / 12;
-        width: 100%;
+        width: 92%;
     }
 
     .gallery-diptych--first {
-        grid-column: 2 / 12;
-        grid-template-columns: repeat(10, minmax(0, 1fr));
+        grid-column: 1 / -1;
     }
 
     .gallery-diptych--first .gallery-photo--diptych-a {
-        grid-column: 1 / 5;
+        width: 63%;
     }
 
     .gallery-diptych--first .gallery-photo--diptych-b {
-        grid-column: 6 / 11;
+        width: 83%;
     }
 
     .gallery-note--first {
@@ -1073,25 +1074,26 @@ a {
 
     .gallery-photo--bleed {
         grid-column: 1 / -1;
+        width: 78%;
+        margin-left: auto;
     }
 
     .gallery-diptych--second {
-        grid-column: 1 / 12;
-        grid-template-columns: repeat(11, minmax(0, 1fr));
+        grid-column: 1 / -1;
     }
 
     .gallery-diptych--second .gallery-photo--large {
-        grid-column: 1 / 7;
+        width: 68%;
     }
 
     .gallery-diptych--second .gallery-photo--small {
-        grid-column: 8 / 12;
+        width: 63%;
     }
 
     .gallery-photo--closing {
-        grid-column: 3 / 12;
-        width: auto;
-        margin-left: 0;
+        grid-column: 1 / -1;
+        width: 88%;
+        margin-inline: auto;
     }
 
     .gallery-note--final {

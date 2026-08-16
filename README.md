@@ -253,7 +253,6 @@ gift: {
     bank: "[BANCO]",
     holder: "[TITULAR]",
     account: "[CUENTA]",
-    alias: "[ALIAS]"
 }
 ```
 
